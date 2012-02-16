@@ -1,63 +1,78 @@
----
-author: saberma
-desc: 分享技术实践，创业历程
----
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    {% if page.title != null %}
-    <title>{{page.title}} | {{ page.desc }} - {{ page.author }}</title>
-    {% else %}
-    <title>{{ page.desc }} - {{ page.author }}</title>
-    {% endif %}
-    <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print" charset="utf-8"/>
-    <!--[if IE]><script src="/javascripts/html5.js"></script><![endif]-->
-  </head>
-  <body>
-    <div id="wrapper"><!-- #wrapper -->
+﻿<!doctype html>
+<html lang="gbk">
+<head>
+	<meta charset="utf-8" />
+	<title>iAv.me</title>
+	<link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<div id="wrapper"><!-- #wrapper -->
 
-      <header><!-- header -->
-      <h1><a href="/">{{ page.author }}</a></h1>
-      <h2><a href="/">{{ page.desc }}</a></h2>
-      </header><!-- end of header -->
+	<header><!-- header -->
+		<h1><a href="http://iav.me">iAv.me</a></h1>
+		<h2>一个神奇的网站</h2>
+	</header><!-- end of header -->
+	
+	<nav><!-- top nav -->
+		<div class="menu">
+			<ul>
+				<li><a href="http://iav.me">煮叶</a></li>
+				<li><a href="about.htm">关于iav</a></li>
+				<li><a href="blog.htm">文章列表</a></li>
+				<li><a href="eat.htm">吃&喝</a></li>
+				<li><a href="tv.htm">美剧</a></li>
+				<li><a href="human.htm">人类学</a></li>
+				<li><a href="human.htm">法语</a></li>
+				<li><a href="human.htm">各种玩的</a></li>
+				<li><a href="human.htm">IT神马的</a></li>
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+	
+	<section id="main"><!-- #main content and sidebar area -->
+	
+		<aside id="sidebar1"><!-- sidebar1 -->
+				<h3>个人关键词</h3>
+					<ul>
+						<a herf=""><li>键盘控，装B控</li>
+						<li>西瓜，火锅</li>
+						<li>超级懒人</li>
+						<li>喝红酒</li>
+						<li>白日梦</li>
+						<li>技术差，脾气大</li></a>
+					</ul>
+					
+				<h3>广告地带</h3>
+					<img src="/images/ad125.jpg" alt="" /><br /><img src="/images/ad125.jpg" alt="" /><br /><br />
 
-      <nav><!-- top nav -->
-      <div class="menu">
-        <ul>
-          <li><a href="/">首页</a></li>
-          <li><a href="/blogs.html">文章列表</a></li>
-          <li><a href="/about.html">关于我</a></li>
-          <li><a href="/linux/2011/02/24/my-ubuntu.html">我的Ubuntu</a></li>
-          <li><a href="/linux/2011/03/03/vagrant-virtual-develop-enviroment.html">虚拟化开发环境</a></li>
-          <li><a href="/git/2010/10/25/git-flow.html">版本控制标准流程</a></li>
-        </ul>
-      </div>
-      </nav><!-- end of top nav -->
+				<h3>文章分类</h3>
+					<ul>
+					{% for category in site.categories %}
+					<li><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
+					{% endfor %}
+						
+					
+					</ul>
 
-      <section id="main"><!-- #main content and sidebar area -->
-      <div id="content">
-        <article class="articlecontent">
-          {{ content }}
-        </article>
-      </div>
+				<h3>找到我的方法</h3>
+					<ul>
+						<li><a href="mailto:hq1984@gmail.com">Email</a></li>
+					
+					</ul>
 
-      <aside>
-      <section>
-      <h3>Who's saberma</h3>
-      <img src="/images/saberma.jpeg"/>
-      <p>email(gtalk):<a href="mailto:mahb45@gmail.com">mahb45@gmail.com</a></p>
-      <p>twitter:<a href="http://twitter.com/saberma">twitter.com/saberma</a></p>
-      <p>
-        <a href="http://github.com/saberma">github</a>
-        <a href="http://www.douban.com/people/4034647/">douban</a>
-      </p>
-      </section>
+		</aside><!-- end of sidebar1 -->
+	
+			<section id="content"><!-- #content -->
+			
+        	 {{ content }}
+						
+			</section><!-- end of #content -->
 
-      <section>
+		<aside id="sidebar2"><!-- sidebar2 -->
+	
+					<ul>
       <!-- Feedsky FEED发布代码开始 -->
       <!-- FEED自动发现标记开始 -->
       <link title="RSS 2.0" type="application/rss+xml" href="http://feed.feedsky.com/saberma" rel="alternate" />
@@ -70,96 +85,74 @@ desc: 分享技术实践，创业历程
       <a href="http://www.xianguo.com/subscribe.php?url=http://feed.feedsky.com/saberma"><img border="0" src="http://img.feedsky.com/images/icon_subshot01_xianguo.gif" alt="&#40092;&#26524;" vspace="2" style="margin-bottom:3px" ></a><br />
       <a href="http://9.douban.com/reader/subscribe?url=http://feed.feedsky.com/saberma"><img border="0" src="http://img.feedsky.com/images/icon_subshot01_douban.gif" alt="&#20061;&#28857;" vspace="2" style="margin-bottom:3px" ></a><br />
       <!-- Feedsky FEED发布代码结束 -->
-      </section>
+					</ul>
 
-      <section>
-      <h3>Categories</h3>
-      <ul>
-        {% for category in site.categories %}
-        <li><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
-        {% endfor %}
-      </ul>
-      </section>
+				<h3>广告地带</h3>
+					<ul>
+					<img src="/images/ad125.jpg" alt="" /><br /><img src="/images/ad125.jpg" alt="" /><br /><br />
+					</ul>
 
-      <section>
-      <h3>Sponsors</h3>
-      <a href="http://www.engineyard.com"><img src="/images/sponsor_ey.jpg" alt="Engine Yard" /><a>
-      <a href="http://railskits.com"><img src="/images/sponsor_railskits.gif" alt="ad" /></a>
-      <br/>
-      <a href="http://www.vancl.com/WebSource/WebSource.aspx?source=saberma&url=http://www.vancl.com/" target="_blank"><img src="/images/sponsor_vancl.jpg" border="0" /></a>
-      <a href="http://www.agilealliance.org"><img src="/images/sponsor_agile.jpg" alt="ad" /></a>
-      </section>
 
-      <section>
-      <div id="github-badge">
-      </div>
-      </section>
-      <script type="text/javascript" charset="utf-8">
-      GITHUB_USERNAME = "saberma";
-      </script>
-      <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
+				<h3>Did You Know?</h3>
+					<ul>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+					</ul>
 
-      </aside>
 
-      </section><!-- end of #main content and sidebar-->
 
-      <footer>
-      <section id="footer-area">
+		</aside><!-- end of sidebar -->
 
-      <section id="footer-outer-block">
-      <aside class="footer-segment">
-      <h4>Friends</h4>
-      <ul>
-        <li><a href="http://saberma.me">saberma博客</a></li>
-        <li><a href="http://www.55xiaoyou.com">闪记脑力[iphone益智游戏]</a></li>
-        <li><a href="http://www.sszgclub.com">甩手掌柜[多网店管理]</a></li>
-        <li><a href="http://click.union.360buy.com/JdClick/?unionId=2467&t=1&to=http://www.360buy.com" target="_blank">网购上京东[省钱又放心]</a></li>
-      </ul>
-      </aside><!-- end of #first footer segment -->
+	</section><!-- end of #main content and sidebar-->
+	
+		<footer>
+		<section id="footer-area">
 
-      <aside class="footer-segment">
-      <h4>Blogroll</h4>
-      <ul>
-        <li><a href="http://robielee.me">小狼</a></li>
-        <li><a href="http://2simple.cn">2Simple</a></li>
-        <li><a href="http://abitno.me">A Bit? No!!!</a></li>
-        <li><a href="http://daodao.org">盗盗</a></li>
-      </ul>
-      </aside><!-- end of #second footer segment -->
+			<section id="footer-outer-block">
+					<aside class="footer-segment">
+							<h4>好盆友们</h4>
+								<ul>
+									<li><a href="http://blog.gxceo.com/">残耳</a></li>
+									<li><a href="#">空闲中</a></li>
+									<li><a href="#">空闲中</a></li>
+								</ul>
+					</aside><!-- end of #first footer segment -->
 
-      <aside class="footer-segment">
-      <h4>Coolness</h4>
-      <ul>
-        <li><a href="http://xianguo.com">鲜果</a></li>
-        <li><a href="http://github.com">GitHub</a></li>
-        <li><a href="http://www.pivotaltracker.com">PivotalTracker</a></li>
-        <li><a href="http://chinaonrails.com">ChinaOnRails</a></li>
-      </ul>
-      </aside><!-- end of #third footer segment -->
+					<aside class="footer-segment">
+							<h4>经常出没的地方</h4>
+								<ul>
+									<li><a href="http://www.v2ex.com">v2ex</a></li>
+									<li><a href="http://www.ipc.me">iPc.me</a></li>
+									<li><a href="http://bbs.sfile2012.com/index.php">伊甸园</a></li>
+								</ul>
+					</aside><!-- end of #second footer segment -->
 
-      <aside class="footer-segment">
-      <h4>Encourage</h4>
-      <p>尝试. 坚持. 分享. 宽容.</p>
-      </aside><!-- end of #fourth footer segment -->
+					<aside class="footer-segment">
+							<h4>空闲的链接</h4>
+								<ul>
+									<li><a href="#">空闲的链接</a></li>
+									<li><a href="#">空闲的链接</a></li>
+									<li><a href="#">空闲的链接</a></li>
+								</ul>
+					</aside><!-- end of #third footer segment -->
+					
+					<aside class="footer-segment">
+							<h4>版权声明</h4>
+								<p>&copy; 2012 <a href="http://iav.me">iAv.me</a> 是本人基于jekyll搞出来的，任何人未经许可擅自推倒，将承受爆菊之刑且后果自负.</p>
+					</aside><!-- end of #fourth footer segment -->
 
-      </section><!-- end of footer-outer-block -->
+			</section><!-- end of footer-outer-block -->
 
-      </section><!-- end of footer-area -->
-      </footer>
-
-    </div><!-- #wrapper -->
-    <a href="http://github.com/saberma"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://assets2.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_red_aa0000.png&path=" alt="Fork me on GitHub"></a>
-
-    <script>
-      var _gaq = [['_setAccount', 'UA-12120506-1'], ['_trackPageview']];
-      (function(d, t) {
-        var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-        g.async = true;
-        g.src = '//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g, s);
-      })(document, 'script');
-    </script>
-    <!-- Free template created by http://freehtml5templates.com -->
-  </body>
+		</section><!-- end of footer-area -->
+	</footer>
+	
+</div><!-- #wrapper -->
+<!-- Free template created by http://freehtml5templates.com -->
+</body>
 </html>
