@@ -67,14 +67,6 @@ google_ad_height = 125;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script><br /><br />
 
-				<h3>文章分类</h3>
-					<ul>
-					{% for category in site.categories %}
-					<li><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
-					{% endfor %}
-						
-					
-					</ul>
 
 				<h3>找到我的方法</h3>
 					<ul>
@@ -123,16 +115,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 					</ul>
 
 
-				<h3>Did You Know?</h3>
+				<h3>文章分类</h3>
 					<ul>
-						<li><a href="#">Curabitur sodales</a></li>
-						<li><a href="#">Sed dignissim</a></li>
-						<li><a href="#">Fusce nec</a></li>
-						<li><a href="#">Nulla quis</a></li>
-						<li><a href="#">Curabitur sodales</a></li>
-						<li><a href="#">Sed dignissim</a></li>
-						<li><a href="#">Fusce nec</a></li>
-						<li><a href="#">Nulla quis</a></li>
+					{% for category in site.categories %}
+					<li><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
+					{% endfor %}
+						
+					
 					</ul>
 
 
